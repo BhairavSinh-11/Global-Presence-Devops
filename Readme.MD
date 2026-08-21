@@ -64,5 +64,3 @@ Global-Presence/
 ├── app.py
 ├── requirements.txt
 ├── .gitignore
-└── README.md
-```
