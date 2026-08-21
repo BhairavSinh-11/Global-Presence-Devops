@@ -1,0 +1,168 @@
+<form
+  action="/submit-inquiry"
+  method="POST"
+  class="contact-inquiry-form"
+  id="contact-inquiry-form"
+>
+  <div class="form-grid">
+    <!-- Name Input -->
+    <div class="form-group">
+      <label for="form-name"
+        ><i class="fa-solid fa-user"></i> Full Name
+        <span class="required">*</span></label
+      >
+      <input
+        type="text"
+        id="form-name"
+        name="name"
+        placeholder="John Doe"
+        required
+        minlength="2"
+        maxlength="100"
+        autocomplete="name"
+      />
+    </div>
+
+    <!-- Email Input -->
+    <div class="form-group">
+      <label for="form-email"
+        ><i class="fa-solid fa-envelope"></i> Email Address
+        <span class="required">*</span></label
+      >
+      <input
+        type="email"
+        id="form-email"
+        name="email"
+        placeholder="john@example.com"
+        required
+        maxlength="120"
+        autocomplete="email"
+      />
+    </div>
+
+    <!-- Phone Input -->
+    <div class="form-group">
+      <label for="form-phone"
+        ><i class="fa-solid fa-phone"></i> Phone Number
+        <span class="required">*</span></label
+      >
+      <input
+        type="tel"
+        id="form-phone"
+        name="phone"
+        placeholder="9876543210"
+        required
+        pattern="[0-9]{10}"
+        minlength="10"
+        maxlength="10"
+        inputmode="numeric"
+        autocomplete="tel"
+      />
+    </div>
+
+    <!-- Visa Type Dropdown -->
+    <div class="form-group">
+      <label for="form-visa"
+        ><i class="fa-solid fa-passport"></i> Visa Category
+        <span class="required">*</span></label
+      >
+      <div class="select-wrapper">
+        <select id="form-visa" name="visa_type" required>
+          <option value="" disabled selected>Select Visa Program</option>
+          <option value="Australia Immigration">
+            Australia Immigration (Subclass 491/189/190)
+          </option>
+          <option value="Canada Immigration">
+            Canada Immigration (Express Entry/PNP)
+          </option>
+          <option value="Spouse & Child Visa">
+            Spouse & Child Visa (Family Sponsorship)
+          </option>
+          <option value="Tourist Visa">Tourist & Visitor Visa</option>
+          <option value="Student Visa">Student Visa / Study Abroad</option>
+        </select>
+        <i class="fa-solid fa-chevron-down select-chevron"></i>
+      </div>
+    </div>
+
+    <!-- Target Country Dropdown -->
+    <div class="form-group">
+      <label for="form-country"
+        ><i class="fa-solid fa-map-location-dot"></i> Destination Country
+        <span class="required">*</span></label
+      >
+      <div class="select-wrapper">
+        <select id="form-country" name="country" required>
+          <option value="" disabled selected>Select Destination</option>
+          <option value="Australia">Australia</option>
+          <option value="Canada">Canada</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          <option value="Europe">Europe / Schengen Countries</option>
+          <option value="New Zealand">New Zealand</option>
+        </select>
+        <i class="fa-solid fa-chevron-down select-chevron"></i>
+      </div>
+    </div>
+
+    <!-- Education Dropdown -->
+    <div class="form-group">
+      <label for="form-education"
+        ><i class="fa-solid fa-graduation-cap"></i> Highest Education
+        <span class="required">*</span></label
+      >
+      <div class="select-wrapper">
+        <select id="form-education" name="education" required>
+          <option value="" disabled selected>Select Qualification</option>
+          <option value="High School">High School (10+2)</option>
+          <option value="Diploma">Diploma / Vocational Training</option>
+          <option value="Bachelor's Degree">Bachelor's Degree</option>
+          <option value="Master's Degree">Master's Degree</option>
+          <option value="Doctorate/PhD">Doctorate / PhD</option>
+        </select>
+        <i class="fa-solid fa-chevron-down select-chevron"></i>
+      </div>
+    </div>
+
+    <!-- Work Experience Dropdown -->
+    <div class="form-group">
+      <label for="form-experience"
+        ><i class="fa-solid fa-briefcase"></i> Work Experience
+        <span class="required">*</span></label
+      >
+      <div class="select-wrapper">
+        <select id="form-experience" name="experience" required>
+          <option value="" disabled selected>Select Work History</option>
+          <option value="No Experience">No Experience / Fresh Graduate</option>
+          <option value="Less than 1 Year">Less than 1 Year</option>
+          <option value="1-3 Years">1 - 3 Years</option>
+          <option value="3-5 Years">3 - 5 Years</option>
+          <option value="5+ Years">5+ Years / Senior Level</option>
+        </select>
+        <i class="fa-solid fa-chevron-down select-chevron"></i>
+      </div>
+    </div>
+
+    <!-- Message text field -->
+    <div class="form-group col-span-2">
+      <label for="form-message"
+        ><i class="fa-solid fa-comment-dots"></i> Additional Information /
+        Message</label
+      >
+      <textarea
+        id="form-message"
+        name="message"
+        rows="3"
+        placeholder="Tell us more about your background or list any questions..."
+      ></textarea>
+    </div>
+  </div>
+
+  <!-- Submit Button & Feedback Message Area -->
+  <div class="form-footer">
+    <button type="submit" class="btn btn-gold btn-block" id="form-submit-btn">
+      <i class="fa-solid fa-check-double"></i> Send Inquiry Details
+    </button>
+    <div class="form-status-msg" id="form-status-msg"></div>
+  </div>
+</form>

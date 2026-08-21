@@ -1,0 +1,589 @@
+{% extends 'base.html' %} {% block title %}Global Presence - Complete
+Immigration & Visa Solutions{% endblock %} {% block content %}
+
+<!-- Hero Section -->
+<section id="top" class="hero-section">
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <span class="hero-badge"
+        ><i class="fa-solid fa-plane-departure"></i> Registered Migration
+        Consultants</span
+      >
+      <h1 class="hero-title">
+        Get the Immigration or Visa Help You Need Today
+      </h1>
+      <p class="hero-subtitle">
+        Navigating complex immigration laws is challenging. Our registered
+        advisors simplify the paperwork, map your eligibility, and support you
+        from start to finish to ensure success.
+      </p>
+      <div class="hero-actions">
+    <a href="#services" class="btn btn-gold btn-large">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Explore Services
+    </a>
+
+    <a href="#contact" class="btn btn-outline btn-large" id="hero-cta-btn">
+        <i class="fa-solid fa-file-signature"></i>
+        Free Assessment
+    </a>
+</div>
+      </div>
+    </div>
+
+    <!-- Interactive Compass/Globe Visual -->
+    <div class="hero-visual">
+      <div class="glass-card visual-card">
+        <div class="visual-globe"><i class="fa-solid fa-earth-asia"></i></div>
+        <div class="visual-decor ring-1"></div>
+        <div class="visual-decor ring-2"></div>
+        <div class="floating-badge badge-aus">
+          <span class="flag-icon">🇦🇺</span> Australia Skilled Subclass
+          491/189/190
+        </div>
+        <div class="floating-badge badge-can">
+          <span class="flag-icon">🇨🇦</span> Canada Express Entry & PNP
+        </div>
+        <div class="floating-badge badge-vis">
+          <span class="flag-icon">✈️</span> Visitor & Spouse Visas
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest News CSS Ticker (Replacing outdated <marquee>) -->
+<div class="news-ticker-section">
+  <div class="ticker-title">
+    <span class="pulse-icon"></span> Latest Updates
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-content-container">
+      {% if latest_news %} {% for news in latest_news %}
+      <span class="ticker-item"
+        ><i class="fa-solid fa-bullhorn text-accent"></i> {{ news }}</span
+      >
+      {% endfor %} {% else %}
+      <span class="ticker-item"
+        ><i class="fa-solid fa-bullhorn text-accent"></i> Australian Immigration
+        welcomes new immigrants under new subclass 491. Contact for
+        eligibility.</span
+      >
+      <span class="ticker-item"
+        ><i class="fa-solid fa-bullhorn text-accent"></i> Express Entry and
+        Provincial Nominee Program (PNP) details for 2026 are active.</span
+      >
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Statistics Counter Section -->
+<section class="stats-section">
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+      <div class="stat-number-wrapper">
+        <span class="stat-number" data-target="5">0</span
+        ><span class="stat-suffix">+</span>
+      </div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-file-invoice"></i></div>
+      <div class="stat-number-wrapper">
+        <span class="stat-number" data-target="400">0</span
+        ><span class="stat-suffix">+</span>
+      </div>
+      <div class="stat-label">Applications Processed / Year</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <div class="stat-number-wrapper">
+        <span class="stat-number" data-target="98">0</span
+        ><span class="stat-suffix">%</span>
+      </div>
+      <div class="stat-label">Visa Approval Rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+      <div class="stat-number-wrapper">
+        <span class="stat-number" data-target="1500">0</span
+        ><span class="stat-suffix">+</span>
+      </div>
+      <div class="stat-label">Happy Migrants</div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="section-header">
+    <span class="section-subtitle">What We Do</span>
+    <h2 class="section-title">Our Visa & Immigration Services</h2>
+    <p class="section-desc">
+      We offer end-to-end guidance and specialized consultation across multiple
+      migration streams.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <!-- Service 1: Australia -->
+    <div class="service-card" data-service="australia">
+      <div class="service-card-bg"></div>
+      <div class="service-icon-wrap">
+        <i class="fa-solid fa-austral-sign"></i>
+        <span class="service-badge-country">AUS</span>
+      </div>
+      <h3>Australia Immigration</h3>
+      <p>
+        Skilled visas (Subclass 491, 189, 190) targeting professionals, trade
+        workers, and families. Point calculation and skills assessments.
+      </p>
+      <button class="btn btn-text open-service-btn" data-target="modal-aus">
+        Learn Details <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+
+    <!-- Service 2: Canada -->
+    <div class="service-card" data-service="canada">
+      <div class="service-card-bg"></div>
+      <div class="service-icon-wrap">
+        <i class="fa-solid fa-leaf"></i>
+        <span class="service-badge-country">CAN</span>
+      </div>
+      <h3>Canada Immigration</h3>
+      <p>
+        Express Entry (FSW, CEC, FST) and Provincial Nominee Programs (PNP) for
+        skilled workers looking to settle in Canadian provinces.
+      </p>
+      <button class="btn btn-text open-service-btn" data-target="modal-can">
+        Learn Details <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+
+    <!-- Service 3: Spouse & Child -->
+    <div class="service-card" data-service="spouse">
+      <div class="service-card-bg"></div>
+      <div class="service-icon-wrap">
+        <i class="fa-solid fa-people-roof"></i>
+        <span class="service-badge-country">FAM</span>
+      </div>
+      <h3>Spouse & Child Visa</h3>
+      <p>
+        Reunite with your family through dependent child visas and spouse
+        sponsorship programs, ensuring hassle-free processing.
+      </p>
+      <button class="btn btn-text open-service-btn" data-target="modal-spouse">
+        Learn Details <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+
+    <!-- Service 4: Tourist Visa -->
+    <div class="service-card" data-service="tourist">
+      <div class="service-card-bg"></div>
+      <div class="service-icon-wrap">
+        <i class="fa-solid fa-passport"></i>
+        <span class="service-badge-country">TRV</span>
+      </div>
+      <h3>Tourist & Visitor Visa</h3>
+      <p>
+        Short-term leisure, family visits, or business exploration visas to
+        major global destinations with high filing success.
+      </p>
+      <button class="btn btn-text open-service-btn" data-target="modal-tourist">
+        Learn Details <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="aboutus" class="about-section">
+  <div class="about-container">
+    <!-- Text Content Column -->
+    <div class="about-text-content">
+      <span class="section-subtitle">Who We Are</span>
+      <h2 class="section-title">Why! Global Presence</h2>
+
+      <div class="about-paragraph-group">
+        <h3>Avoid Costly Mistakes & Delay</h3>
+        <p>
+          Surely, you can apply for a visa without the help of a registered
+          migration agent, however doing so could result in a lot of frustration
+          & not much success. Apart from the extensive paperwork & processes
+          required, even the smallest mistake in the process or forms could doom
+          your application to the waiting pile. That's where we come in. Global
+          Presence provides registered advisors who answer all your queries and
+          ensure files are correct from the start.
+        </p>
+      </div>
+
+      <div class="about-paragraph-group">
+        <h3>Migrate to your Dream Destination Now!</h3>
+        <p>
+          Our company is a high-quality Immigration Agency. Our dynamic
+          portfolio includes deep expertise in immigration to Australia &
+          Canada. We provide widespread immigration & sponsorship advisory
+          services for professionals, families, and individuals. Over the last 5
+          years, we have grown significantly, processing more than 400
+          applications every year with a high success rate.
+        </p>
+      </div>
+
+      <div class="about-paragraph-group">
+        <h3>Dedicated Advisors for Visa Applications</h3>
+        <p>
+          Here at Global Presence, our team of specialist skilled migration
+          agents can provide professional advice regarding the entire list of
+          skilled migration occupations. We have a passion for making big dreams
+          come true, and this passion translates into successful stories for all
+          our clients.
+        </p>
+      </div>
+    </div>
+
+    <!-- Visually Rich Cards Column -->
+    <div class="about-visual-column">
+      <div class="glass-card trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="trust-content">
+          <h4>Registered Experts</h4>
+          <p>
+            Our consultants are fully qualified, keeping up with volatile
+            immigration laws.
+          </p>
+        </div>
+      </div>
+      <div class="glass-card trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-shield"></i></div>
+        <div class="trust-content">
+          <h4>Tailored Point Analysis</h4>
+          <p>
+            We analyze age, education, and language points to map the best visa
+            subclass.
+          </p>
+        </div>
+      </div>
+      <div class="glass-card trust-card">
+        <div class="trust-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <div class="trust-content">
+          <h4>Dedicated Case Manager</h4>
+          <p>
+            Receive individual, one-on-one attention throughout your visa
+            journey.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+  <div class="section-header">
+    <span class="section-subtitle">Testimonials</span>
+    <h2 class="section-title">What Our Successful Clients Say</h2>
+    <p class="section-desc">
+      Hear the firsthand experiences of families and professionals who migrated
+      through our guidance.
+    </p>
+  </div>
+
+  <div class="testimonials-container">
+    <!-- Testimonial 1 -->
+    <div class="glass-card testimonial-card">
+      <div class="rating-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+        ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+        ><i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-text">
+        "Global Presence made my dream of moving to Sydney a reality. Their team
+        correctly identified subclass 190 and guided me through my ACS Skills
+        Assessment. Fantastic service!"
+      </p>
+      <div class="client-info">
+        <div class="client-avatar"><i class="fa-solid fa-user-tie"></i></div>
+        <div class="client-meta">
+          <h4>Vikramjeet Singh</h4>
+          <span>Software Engineer (Sydney, Australia)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="glass-card testimonial-card">
+      <div class="rating-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+        ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+        ><i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-text">
+        "Highly professional staff! I was struggling with the Canada Express
+        Entry CRS score, but they advised me on provincial nomination (PNP) for
+        Saskatchewan. Got my COPR within 8 months."
+      </p>
+      <div class="client-info">
+        <div class="client-avatar">
+          <i class="fa-solid fa-user-astronaut"></i>
+        </div>
+        <div class="client-meta">
+          <h4>Harpreet Kaur</h4>
+          <span>Financial Analyst (Regina, Canada)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="glass-card testimonial-card">
+      <div class="rating-stars">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+        ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+        ><i class="fa-solid fa-star"></i>
+      </div>
+      <p class="testimonial-text">
+        "Applied for a Tourist Visa for Europe. They helped compile all document
+        trails, hotel reserves, and cover letters. Got my Schengen visa in
+        record time with zero hassle!"
+      </p>
+      <div class="client-info">
+        <div class="client-avatar"><i class="fa-solid fa-user-ninja"></i></div>
+        <div class="client-meta">
+          <h4>Rajesh Sharma</h4>
+          <span>Business Owner (Chandigarh, India)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Inquiry Section -->
+<section id="contact" class="cta-inquiry-section">
+  <div class="cta-inquiry-container glass-card">
+    <div class="cta-info">
+      <h2>Ready to Begin Your Assessment?</h2>
+      <p>
+        Our specialists will evaluate your points, occupation, qualifications,
+        and provide a clear roadmap for migration. Send us your profile details
+        for an expert review.
+      </p>
+      <ul class="cta-points">
+        <li>
+          <i class="fa-solid fa-circle-check text-accent"></i> Free Initial
+          Profile Assessment
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check text-accent"></i> Point Grid
+          Mapping & Strategy Session
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check text-accent"></i> 100% Confidential
+          Consultation
+        </li>
+      </ul>
+      <div class="cta-phone-call">
+        <div class="call-icon"><i class="fa-solid fa-phone-volume"></i></div>
+        <div>
+          <span class="call-title">Call Us Directly</span>
+          <span class="call-number">+91 99159 55555</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-form-container">
+      <h3>Online Profile Assessment</h3>
+      <p>Fill out the form below. All fields marked with * are required.</p>
+      <!-- Include the contact form component -->
+      {% include 'components/contact_form.html' %}
+    </div>
+  </div>
+</section>
+
+<!-- Service Modals (Detailed content shown on service card click) -->
+<div class="modal-overlay" id="service-modal-overlay">
+  <!-- Australia Modal -->
+  <div class="modal-content-card" id="modal-aus">
+    <button class="modal-close-btn" aria-label="Close Modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-header">
+      <span class="modal-badge"
+        ><i class="fa-solid fa-austral-sign"></i> Australia</span
+      >
+      <h2>Australia Skilled Migration Solutions</h2>
+    </div>
+    <div class="modal-body">
+      <p>
+        Migrating to Australia requires scoring points based on age, education,
+        English proficiency, and work experience. We specialize in:
+      </p>
+      <ul>
+        <li>
+          <strong>Subclass 189:</strong> Skilled Independent Visa for
+          high-scoring applicants.
+        </li>
+        <li>
+          <strong>Subclass 190:</strong> State Nominated Visa requiring state
+          sponsorship.
+        </li>
+        <li>
+          <strong>Subclass 491:</strong> Regional Work visa, opening pathways to
+          Permanent Residency after 3 years.
+        </li>
+        <li>
+          <strong>Skills Assessment:</strong> ACS, VETASSESS, TRA, and CPA
+          filing.
+        </li>
+      </ul>
+      <p>
+        Our registered migration agents evaluate your credentials to select the
+        highest-odds subclass and manage skills assessment validation.
+      </p>
+    </div>
+    <a href="#contact">
+    <div class="modal-footer">
+      <button class="btn btn-gold modal-cta-trigger">
+        Get Free Assessment
+      </button>
+    </div>
+    </a>
+  </div>
+
+  <!-- Canada Modal -->
+  <div class="modal-content-card" id="modal-can">
+    <button class="modal-close-btn" aria-label="Close Modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-header">
+      <span class="modal-badge"
+        ><i class="fa-solid fa-maple-leaf"></i> Canada</span
+      >
+      <h2>Canada Express Entry & PNP Streams</h2>
+    </div>
+    <div class="modal-body">
+      <p>
+        Canada welcomes skilled workers through a merit-based Comprehensive
+        Ranking System (CRS). We offer advisory for:
+      </p>
+      <ul>
+        <li>
+          <strong>Express Entry:</strong> Federal Skilled Worker (FSW), Federal
+          Skilled Trades (FST), and Canadian Experience Class (CEC).
+        </li>
+        <li>
+          <strong>Provincial Nominee Program (PNP):</strong> PNP nomination
+          boosts your CRS score by 600 points, guaranteeing an ITA (Ontario, BC,
+          Alberta, Saskatchewan, etc.).
+        </li>
+        <li><strong>LMIA Auditing:</strong> Legal job offer verification.</li>
+      </ul>
+      <p>
+        We guide clients in maximizing CRS scores (e.g. advising on French
+        language, IELTS improvements, or PNP matching).
+      </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#contact">
+      <button class="btn btn-gold modal-cta-trigger">
+        Get Free Assessment
+      </button></a>
+    </div>
+  </div>
+
+  <!-- Family Visa Modal -->
+  <div class="modal-content-card" id="modal-spouse">
+    <button class="modal-close-btn" aria-label="Close Modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-header">
+      <span class="modal-badge"
+        ><i class="fa-solid fa-people-roof"></i> Family</span
+      >
+      <h2>Spouse & Child Reunification Visas</h2>
+    </div>
+    <div class="modal-body">
+      <p>
+        Bring your loved ones to settle with you in Australia or Canada under
+        legal family sponsorships.
+      </p>
+      <ul>
+        <li>
+          <strong>Spouse Sponsorship:</strong> Visa subclasses for legally
+          married or de facto partners.
+        </li>
+        <li>
+          <strong>Child Visas:</strong> Dependent visas for biological or
+          adopted children under eligible age brackets.
+        </li>
+        <li>
+          <strong>Parent Visas:</strong> Contributory and non-contributory
+          categories.
+        </li>
+      </ul>
+      <p>
+        Family visa documentation is highly scrutinized to prove genuine
+        relationship criteria. Our team compiles meticulous relationship
+        evidence history to ensure approval.
+      </p>
+    </div>
+    <a href="#contact">
+    <div class="modal-footer">
+      <button class="btn btn-gold modal-cta-trigger">
+        Get Free Assessment
+      </button>
+    </div>
+    </a>
+  </div>
+
+  <!-- Tourist Visa Modal -->
+  <div class="modal-content-card" id="modal-tourist">
+    <button class="modal-close-btn" aria-label="Close Modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-header">
+      <span class="modal-badge"
+        ><i class="fa-solid fa-passport"></i> Visitor</span
+      >
+      <h2>Tourist & Business Visitor Visas</h2>
+    </div>
+    <div class="modal-body">
+      <p>
+        Whether visiting friends and family, attending a business summit, or
+        going on vacation, we assist in securing visitor permits:
+      </p>
+      <ul>
+        <li>
+          <strong>Schengen Visas:</strong> Short-stay tourist permits for 27
+          European countries.
+        </li>
+        <li>
+          <strong>USA B1/B2 Visas:</strong> Profile evaluation and DS-160
+          interview preparation.
+        </li>
+        <li>
+          <strong>UK Standard Visitor Visas:</strong> Structured documentation
+          proving financial ties.
+        </li>
+        <li>
+          <strong>Australia Subclass 600:</strong> Fast visa filing for tourism
+          or stream business visits.
+        </li>
+      </ul>
+      <p>
+        We ensure that travel history, assets, and tie-backs to your home
+        country are properly demonstrated to avoid rejection.
+      </p>
+    </div>
+    <a href="#contact">
+    <div class="modal-footer">
+      <button class="btn btn-gold modal-cta-trigger">
+        Get Free Assessment
+      </button>
+    </div>
+    </a>
+  </div>
+</div>
+
+{% endblock %}

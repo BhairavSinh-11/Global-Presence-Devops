@@ -1,0 +1,47 @@
+<header class="navbar-header" id="navbar">
+    <div class="navbar-container">
+        <!-- Logo -->
+        <a href="/" class="navbar-brand">
+            <span class="logo-icon"><i class="fa-solid fa-earth-americas"></i></span>
+            <div class="logo-text">
+                <span class="brand-name">Global Presence</span>
+                <span class="brand-tagline">IMMIGRATION CONSULTANCY</span>
+            </div>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" id="mobile-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Navbar Menu Links -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/#top" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/#aboutus" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="/admin/inquiries" class="nav-link admin-link"><i class="fa-solid fa-lock"></i> Admin Panel</a></li>
+                
+                <!-- Inquiry Dropdown Menu Button -->
+                <li class="nav-item dropdown-container">
+                    <button class="btn btn-primary dropdown-trigger" id="inquiry-dropdown-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Quick Assessment <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+                    <!-- Dropdown Content containing the form -->
+                    <div class="navbar-dropdown-card" id="inquiry-dropdown-card">
+                        <div class="dropdown-card-header">
+                            <h3>Start Your Journey</h3>
+                            <p>Fill in the details below to get a free visa assessment from our migration experts.</p>
+                        </div>
+                        <div class="dropdown-card-body">
+                            <!-- Include the modular Contact Form using Jinja -->
+                            {% include 'components/contact_form.html' %}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
