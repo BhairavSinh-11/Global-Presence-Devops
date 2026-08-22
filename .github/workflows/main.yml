@@ -24,7 +24,9 @@ jobs:
 
       - name: Test application
         run: |
-          sleep 10
+          sleep 5
           curl --fail http://localhost
 
-      
+      - name: Stop containers
+        if: always()
+        run: docker compose down
