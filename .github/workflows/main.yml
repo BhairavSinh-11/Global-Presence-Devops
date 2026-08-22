@@ -5,28 +5,28 @@ on:
     branches:
       - main
 
-  pull_request:
-    branches:
-      - main
-
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
+      - name: Build containers
+        run: docker compose build
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Start containers
+        run: docker compose up -d
 
-      - name: Test Flask application
-        run: python -c "from app import app; print('Flask app loaded successfully')"
+      - name: Check running containers
+        run: docker compose ps
 
-      - name: Build Docker Compose services
-        run: docker compose up --build
+      - name: Test application
+        run: |
+          sleep 10
+          curl --fail http://localhost
+
+      - name: Stop containers
+        if: always()
+        run: docker compose down
