@@ -27,6 +27,4 @@ jobs:
           sleep 10
           curl --fail http://localhost
 
-      - name: Stop containers
-        if: always()
-        run: docker compose down
+      
