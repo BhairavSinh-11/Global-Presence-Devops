@@ -5,8 +5,12 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
-  build-and-test:
+  build-test-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +34,24 @@ jobs:
       - name: Stop containers
         if: always()
         run: docker compose down
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Flask image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/global-presence-flask:latest
+
+      - name: Build and push Nginx image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./nginx
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/global-presence-nginx:latest
