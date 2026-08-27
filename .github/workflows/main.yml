@@ -29,7 +29,7 @@ jobs:
       - name: Test application
         run: |
           sleep 5
-          curl --fail http://localhost
+          curl --fail http://localhost:2423 || exit 1
 
       - name: Stop containers
         if: always()
