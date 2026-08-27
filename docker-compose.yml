@@ -4,8 +4,11 @@ services:
 
     container_name: flaskv1
 
+    ports:
+      - "2423:2423"
+
     expose:
-      - "5000"
+      - "2423"
 
   nginx:
     build: ./nginx
@@ -14,11 +17,11 @@ services:
 
     ports:
       - "80:80"
-      - "443:443"
+      # - "443:443"
 
     volumes:
       - ./static:/usr/share/nginx/html/static
-      - /etc/letsencrypt:/etc/letsencrypt
+      # - /etc/letsencrypt:/etc/letsencrypt
 
     depends_on:
       - flask_app
