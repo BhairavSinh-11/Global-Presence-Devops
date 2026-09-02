@@ -50,6 +50,20 @@ jobs:
           push: true
           tags: ghcr.io/bhairavsinh-11/global-presence-flask:latest
 
+      - name : Debug project structure
+        run: |
+          echo "current Dir:"
+          pwd
+          
+          echo "Root files:"
+          ls -la
+
+          echo "static Dir:"
+          ls -la static || true
+
+          echo "static files"
+          find static -type f | sort || true
+
       - name: Build and push Nginx image
         uses: docker/build-push-action@v6
         with:
