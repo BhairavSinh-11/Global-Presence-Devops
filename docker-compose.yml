@@ -21,9 +21,5 @@ services:
       - "80:80"
       - "443:443"
 
-    # volumes:
-      # - ./static:/usr/share/nginx/html/static
-      # - /etc/letsencrypt:/etc/letsencrypt
-
     depends_on:
       - flask_app
