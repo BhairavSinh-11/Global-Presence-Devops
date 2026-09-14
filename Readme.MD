@@ -19,7 +19,6 @@ The project provides information about immigration services and allows users to 
 - Success and error messages
 - Responsive navigation
 - Reusable Flask/Jinja components
-
 ---
 
 ## Tech Stack
