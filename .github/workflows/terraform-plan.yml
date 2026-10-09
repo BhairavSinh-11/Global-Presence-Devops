@@ -44,7 +44,7 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Terraform Init 
-        run: terraform init -input=false -var-file=terraform.tfvars
+        run: terraform init -input=false
 
       - name: Terraform Validate
         run: terraform validate
