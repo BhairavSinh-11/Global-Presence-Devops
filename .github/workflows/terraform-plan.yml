@@ -43,11 +43,11 @@ jobs:
       - name: Verify AWS Identity
         run: aws sts get-caller-identity
 
-      - name: Terraform Init
-        run: terraform init -input=false
+      - name: Terraform Init 
+        run: terraform init -input=false -var-file=terraform.tfvars
 
       - name: Terraform Validate
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -input=false -no-color
+        run: terraform plan -input=false -no-color -var-file=terraform.tfvars
