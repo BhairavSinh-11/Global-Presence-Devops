@@ -67,7 +67,6 @@ docker-compose.override.yml
 terraform/.terraform/
 terraform/*.tfstate
 terraform/*.tfstate.*
-terraform/*.tfvars
 terraform/override.tf
 terraform/override.tf.json
 terraform/terraform-state-backup.json

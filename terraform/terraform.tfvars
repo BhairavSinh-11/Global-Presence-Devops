@@ -1,0 +1,6 @@
+instance_ami  = "ami-01a00762f46d584a1"
+instance_type = "c7i-flex.large"
+key_name      = "GujjuKEYS-pair"
+region = "ap-south-1"
+key    = "production/terraform.tfstate"
+bucket = "global-presence-tfstate-2423"

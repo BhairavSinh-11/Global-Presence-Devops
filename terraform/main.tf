@@ -7,9 +7,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "global-presence-tfstate-2423"
-    key          = "production/terraform.tfstate"
-    region       = "ap-south-1"
+    bucket       = var.bucket
+    key          = var.key
+    region       = var.region
     encrypt      = true
     use_lockfile = true
   }
