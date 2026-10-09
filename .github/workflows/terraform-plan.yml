@@ -1,4 +1,3 @@
-
 name: Terraform Plan
 
 on:
@@ -6,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'terraform/**'
-      - '.github/workflows/terraform-plan.yml'
+      - "terraform/**"
+      - ".github/workflows/terraform-plan.yml"
   workflow_dispatch:
 
 permissions:
@@ -21,7 +20,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: tf_import
+        working-directory: terraform
 
     steps:
       - name: Checkout repository
@@ -30,7 +29,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: '1.9.8'
+          terraform_version: "1.9.8"
 
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
