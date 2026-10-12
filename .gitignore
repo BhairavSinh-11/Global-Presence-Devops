@@ -70,10 +70,3 @@ terraform/*.tfstate.*
 terraform/override.tf
 terraform/override.tf.json
 terraform/terraform-state-backup.json
-
-# Terraform files and state
-**/*.tf
-**/*.tfvars
-**/*.tfstate
-**/*.tfstate.*
-**/.terraform/
